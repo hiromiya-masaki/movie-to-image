@@ -13,7 +13,7 @@ You cannot read video files directly. This skill extracts frames as JPEG images,
 1. **Overview first.** Run `extract` with defaults to get up to 20 frames spread evenly across the video:
 
    ```
-   python3 scripts/frames.py extract /path/to/video.mp4
+   python3 ${CLAUDE_SKILL_DIR}/scripts/frames.py extract /path/to/video.mp4
    ```
 
 2. **Read the frames.** stdout is a JSON manifest. Read each `frames[].file` in order. Each file name carries its timestamp (`frame_0004_t1.30s.jpg`); `frames[].time` and `source_frame` give the same in the manifest. Cite timestamps when you answer.
@@ -21,7 +21,7 @@ You cannot read video files directly. This skill extracts frames as JPEG images,
 3. **Zoom in on what matters.** For motion, animation timing or anything that happens between overview frames, re-extract only that range at a higher rate:
 
    ```
-   python3 scripts/frames.py extract video.mp4 --start 1.0 --end 3.0 --fps 10
+   python3 ${CLAUDE_SKILL_DIR}/scripts/frames.py extract video.mp4 --start 1.0 --end 3.0 --fps 10
    ```
 
    Use the video's own frame rate (see `probe`) for true frame-by-frame inspection. If the range would exceed `--max-frames`, frames are thinned and `notes` in the manifest says so; narrow the range or raise `--max-frames` rather than ignoring it.

@@ -1,0 +1,11 @@
+{
+  "name": "hiromiya-masaki",
+  "owner": { "name": "hiromiya-masaki" },
+  "plugins": [
+    {
+      "name": "movie-to-image",
+      "source": "./",
+      "description": "Split a video into image frames so AI agents can watch and analyze it."
+    }
+  ]
+}

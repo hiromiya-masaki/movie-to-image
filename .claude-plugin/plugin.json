@@ -1,0 +1,7 @@
+{
+  "name": "movie-to-image",
+  "description": "Split a video into image frames so AI agents can watch and analyze it (frame-by-frame inspection).",
+  "version": "0.1.0",
+  "author": { "name": "hiromiya-masaki" },
+  "keywords": ["video", "ffmpeg", "frames"]
+}
